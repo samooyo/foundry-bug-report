@@ -6,7 +6,7 @@ import {Script} from "forge-std/Script.sol";
 import {Upgrades} from "openzeppelin-foundry-upgrades/Upgrades.sol";
 
 contract Deploy is Script {
-    function run() public {
-        address proxy = Upgrades.deployUUPSProxy("TestContract.sol", "");
+    function run() public returns (address proxy_) {
+        proxy_ = Upgrades.deployUUPSProxy("TestContract.sol", "");
     }
 }
